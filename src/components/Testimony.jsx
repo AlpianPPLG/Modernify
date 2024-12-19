@@ -28,10 +28,10 @@ const Testimony = () => {
 
             <blockquote className="flex flex-col items-center p-4 mt-10">
               <p className="max-w-4xl text-xl font-medium text-center md:text-2xl lg:text-3xl">
-                I recently used this website for a purchase and I was extremely
+                "I recently used this website for a purchase and I was extremely
                 satisfied with the ease of use and the variety of options
                 available. The checkout process was seamless and the delivery
-                was prompt.
+                was prompt."
               </p>
               <footer className="flex items-center gap-3 mt-6 md:mt-12">
                 <img
@@ -54,8 +54,8 @@ const Testimony = () => {
 
             <blockquote className="flex flex-col items-center p-4 mt-10">
               <p className="max-w-4xl text-xl font-medium text-center md:text-2xl lg:text-3xl">
-                This is a fantastic service! I had an amazing experience, and I
-                will definitely recommend it to others.
+                "This is a fantastic service! I had an amazing experience, and I
+                will definitely recommend it to others."
               </p>
               <footer className="flex items-center gap-3 mt-6 md:mt-12">
                 <img

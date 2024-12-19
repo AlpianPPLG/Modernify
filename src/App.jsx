@@ -12,6 +12,7 @@ import Login from "./pages/Login"; // Import Login dari pages
 import SignIn from "./pages/SignIn"; // Import SignIn dari pages
 import PrivacyPolicy from "./pages/PrivacyPolicy"; // Import PrivacyPolicy dari pages
 import TermsConditions from "./pages/TermsConditions"; // Import TermsConditions dari pages
+import Pricing from "./components/Pricing";
 
 function App() {
   const [showScroll, setShowScroll] = useState(false);
@@ -47,6 +48,7 @@ function App() {
               <Hero />
               <About />
               <GetStarted />
+              <Pricing />
               <Testimony />
               <FAQ />
               <Contact />

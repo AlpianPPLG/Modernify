@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom"; // Import useNavigate
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,11 +10,11 @@ const Navbar = () => {
   };
 
   const handleLogin = () => {
-    navigate("/login"); // Navigate to login page
+    navigate("/login");
   };
 
   const handleSignIn = () => {
-    navigate("/signin"); // Navigate to sign in page
+    navigate("/signin");
   };
 
   return (
@@ -63,7 +63,7 @@ const Navbar = () => {
               Login
             </button>
             <button
-              onClick={handleSignIn} // Navigasi ke halaman sign in
+              onClick={handleSignIn}
               className="px-3 py-2 rounded-md text-sm font-medium bg-green-500 text-white hover:bg-green-700"
             >
               Sign In
@@ -78,27 +78,50 @@ const Navbar = () => {
             >
               <span className="sr-only">Open main menu</span>
               <svg
-                className="h-6 w-6"
+                className={`h-6 w-6 transition-transform duration-300 ease-in-out ${
+                  isOpen ? "rotate-45" : ""
+                }`}
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
-                aria-hidden="true"
               >
                 {isOpen ? (
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M6 18L18 6M6 6l12 12"
-                  />
+                  <>
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M6 18L18 6" // Garis diagonal pertama
+                    />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M6 6l12 12" // Garis diagonal kedua
+                    />
+                  </>
                 ) : (
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M4 6h16M4 12h16M4 18h16"
-                  />
+                  <>
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M4 6h16" // Garis horizontal atas
+                    />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M4 12h16" // Garis horizontal tengah
+                    />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M4 18h16" // Garis horizontal bawah
+                    />
+                  </>
                 )}
               </svg>
             </button>
@@ -106,48 +129,51 @@ const Navbar = () => {
         </div>
       </div>
 
-      {isOpen && (
-        <div className="md:hidden" id="mobile-menu">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <a
-              href="#home"
-              className="block px-3 py-2 rounded-md text-base font-medium"
-            >
-              Home
-            </a>
-            <a
-              href="#about"
-              className="block px-3 py-2 rounded-md text-base font-medium"
-            >
-              About
-            </a>
-            <a
-              href="#get-started"
-              className="block px-3 py-2 rounded-md text-base font-medium"
-            >
-              Get Started
-            </a>
-            <a
-              href="#contact"
-              className="block px-3 py-2 rounded-md text-base font-medium"
-            >
-              Contact
-            </a>
-            <button
-              onClick={handleLogin}
-              className="block w-full text-left px-3 py-2 rounded-md text-base font-medium bg-blue-500 text-white hover:bg-blue-700"
-            >
-              Login
-            </button>
-            <button
-              onClick={handleSignIn} // Navigasi ke halaman sign in
-              className="block w-full text-left px-3 py-2 rounded-md text-base font-medium bg-green-500 text-white hover:bg-green-700"
-            >
-              Sign In
-            </button>
-          </div>
+      <div
+        className={`md:hidden transition-all duration-300 ease-in-out overflow-hidden ${
+          isOpen ? "max-h-screen" : "max-h-0"
+        }`}
+        id="mobile-menu"
+      >
+        <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+          <a
+            href="#home"
+            className="block px-3 py-2 rounded-md text-base font-medium"
+          >
+            Home
+          </a>
+          <a
+            href="#about"
+            className="block px-3 py-2 rounded-md text-base font-medium"
+          >
+            About
+          </a>
+          <a
+            href="#get-started"
+            className="block px-3 py-2 rounded-md text-base font-medium"
+          >
+            Get Started
+          </a>
+          <a
+            href="#contact"
+            className="block px-3 py-2 rounded-md text-base font-medium"
+          >
+            Contact
+          </a>
+          <button
+            onClick={handleLogin}
+            className="block w-full text-left px-3 py-2 rounded-md text-base font-medium bg-blue-500 text-white hover:bg-blue-700"
+          >
+            Login
+          </button>
+          <button
+            onClick={handleSignIn}
+            className="block w-full text-left px-3 py-2 rounded-md text-base font-medium bg-green-500 text-white hover:bg-green-700"
+          >
+            Sign In
+          </button>
         </div>
-      )}
+      </div>
     </nav>
   );
 };

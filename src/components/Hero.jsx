@@ -16,7 +16,7 @@ const Hero = () => {
         <meta name="robots" content="index, follow" />
       </Helmet>
 
-      <div id="home" className="">
+      <div id="home" className="relative">
         <div className="dark:bg-transparent">
           <div className="mx-auto flex flex-col items-center py-12 sm:py-24">
             <div className="w-11/12 sm:w-2/3 lg:flex justify-center items-center flex-col mb-5 sm:mb-10">
@@ -55,6 +55,15 @@ const Hero = () => {
               </div>
             </div>
           </div>
+        </div>
+
+        {/* Gambar di bawah Hero Section */}
+        <div className="mt-[-60px] flex justify-center">
+          <img
+            src="https://images.unsplash.com/photo-1628277613967-6abca504d0ac"
+            alt="Beautiful Landscape"
+            className="w-full max-w-2xl md:max-w-3xl h-auto rounded-lg shadow-lg mb-3 sm:mb-0" // Menambahkan margin bawah untuk layar kecil
+          />
         </div>
       </div>
     </>
