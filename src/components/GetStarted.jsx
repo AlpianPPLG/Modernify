@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet"; // Import Helmet untuk SEO
 
 const GetStarted = () => {
   const [starsCount, setStarsCount] = useState(0);
@@ -36,6 +37,19 @@ const GetStarted = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Get Started - Your Website Name</title>
+        <meta
+          name="description"
+          content="Start your journey with MyCompany and explore innovative solutions."
+        />
+        <meta
+          name="keywords"
+          content="get started, MyCompany, innovative solutions"
+        />
+        <meta name="robots" content="index, follow" />
+      </Helmet>
+
       <section
         id="get-started"
         className="container mx-auto px-4 py-12 md:py-24"

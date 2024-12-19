@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Helmet } from "react-helmet"; // Import Helmet untuk SEO
 
 const FAQ = () => {
   const [openIndex, setOpenIndex] = useState(null);
@@ -37,6 +38,15 @@ const FAQ = () => {
 
   return (
     <section id="FAQ" className="bg-gray-100 py-12">
+      <Helmet>
+        <title>FAQ - Your Website Name</title>
+        <meta
+          name="description"
+          content="Frequently Asked Questions about our services."
+        />
+        <meta name="keywords" content="FAQ, questions, support, Modernify" />
+        <meta name="robots" content="index, follow" />
+      </Helmet>
       <div className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16">
         <h2 className="text-4xl font-bold text-gray-900 text-center mb-8">
           Frequently Asked Questions

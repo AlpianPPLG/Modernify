@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Helmet } from "react-helmet"; // Import Helmet untuk SEO
 
 const images = [
   "/src/img/faizur-rehman-GZGWL8wFFuI-unsplash.jpg",
@@ -29,6 +30,15 @@ const About = () => {
 
   return (
     <section id="about" className="bg-gray-100 py-12">
+      <Helmet>
+        <title>About Us - Your Website Name</title>
+        <meta
+          name="description"
+          content="Learn more about our mission and values."
+        />
+        <meta name="keywords" content="about us, mission, values, company" />
+        <meta name="robots" content="index, follow" />
+      </Helmet>
       <div className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16 flex flex-col md:flex-row items-center">
         <div className="md:w-1/2 mb-12 md:mb-0">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">About Us</h2>
