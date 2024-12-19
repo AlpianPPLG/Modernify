@@ -12,12 +12,12 @@ const Hero = () => {
               </span>
               designs.
             </h1>
-            <p className="mt-5 sm:mt-10 lg:w-10/12 text-black  font-normal text-center text-xl">
+            <p className="mt-5 sm:mt-10 lg:w-10/12 text-black font-normal text-center text-xl">
               A Community build tailwind component library.
             </p>
             <div className="mt-10 w-full flex justify-center items-center">
               <input
-                className="w-full p-3 rounded-md rounded-r-none border border-gray-300 placeholder-current dark:bg-gray-500  dark:text-gray-300 dark:border-none"
+                className="w-full p-3 rounded-md rounded-r-none border border-gray-300 placeholder-current dark:bg-gray-500 dark:text-gray-300 dark:border-none"
                 type="text"
                 placeholder="Cari sesuatu"
               />

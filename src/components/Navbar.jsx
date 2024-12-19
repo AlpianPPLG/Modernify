@@ -1,10 +1,20 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
+  };
+
+  const handleLogin = () => {
+    navigate("/login"); // Navigate to login page
+  };
+
+  const handleSignIn = () => {
+    navigate("/signin"); // Navigate to sign in page
   };
 
   return (
@@ -46,10 +56,16 @@ const Navbar = () => {
             </a>
           </div>
           <div className="hidden md:flex space-x-4">
-            <button className="px-3 py-2 rounded-md text-sm font-medium bg-blue-500 text-white hover:bg-blue-700">
+            <button
+              onClick={handleLogin}
+              className="px-3 py-2 rounded-md text-sm font-medium bg-blue-500 text-white hover:bg-blue-700"
+            >
               Login
             </button>
-            <button className="px-3 py-2 rounded-md text-sm font-medium bg-green-500 text-white hover:bg-green-700">
+            <button
+              onClick={handleSignIn} // Navigasi ke halaman sign in
+              className="px-3 py-2 rounded-md text-sm font-medium bg-green-500 text-white hover:bg-green-700"
+            >
               Sign In
             </button>
           </div>
@@ -117,10 +133,16 @@ const Navbar = () => {
             >
               Contact
             </a>
-            <button className="block w-full text-left px-3 py-2 rounded-md text-base font-medium bg-blue-500 text-white hover:bg-blue-700">
+            <button
+              onClick={handleLogin}
+              className="block w-full text-left px-3 py-2 rounded-md text-base font-medium bg-blue-500 text-white hover:bg-blue-700"
+            >
               Login
             </button>
-            <button className="block w-full text-left px-3 py-2 rounded-md text-base font-medium bg-green-500 text-white hover:bg-green-700">
+            <button
+              onClick={handleSignIn} // Navigasi ke halaman sign in
+              className="block w-full text-left px-3 py-2 rounded-md text-base font-medium bg-green-500 text-white hover:bg-green-700"
+            >
               Sign In
             </button>
           </div>

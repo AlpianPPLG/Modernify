@@ -1,4 +1,32 @@
+import { useState, useEffect } from "react";
+
+const images = [
+  "/src/img/faizur-rehman-GZGWL8wFFuI-unsplash.jpg",
+  "/src/img/2.jpg",
+  "/src/img/3.jpg",
+];
+
 const About = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const nextImage = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+  };
+
+  const prevImage = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? images.length - 1 : prevIndex - 1
+    );
+  };
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      nextImage();
+    }, 5000); // Ganti gambar setiap 5 detik
+
+    return () => clearInterval(interval); // Bersihkan interval saat komponen di-unmount
+  }, []);
+
   return (
     <section id="about" className="bg-gray-100 py-12">
       <div className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16 flex flex-col md:flex-row items-center">
@@ -19,12 +47,50 @@ const About = () => {
             </button>
           </div>
         </div>
-        <div className="md:w-1/2 flex justify-center">
+        <div className="md:w-1/2 relative flex justify-center">
           <img
-            src="/src/img/faizur-rehman-GZGWL8wFFuI-unsplash.jpg"
+            src={images[currentIndex]}
             alt="About Illustration"
-            className="rounded-lg shadow-lg"
+            className="rounded-lg shadow-lg transition duration-500"
           />
+          <button
+            onClick={prevImage}
+            className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 rounded-full p-2 shadow-md hover:bg-opacity-75 transition duration-300"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6 text-gray-900"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M15 19l-7-7 7-7"
+              />
+            </svg>
+          </button>
+          <button
+            onClick={nextImage}
+            className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 rounded-full p-2 shadow-md hover:bg-opacity-75 transition duration-300"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6 text-gray-900"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M9 5l7 7-7 7"
+              />
+            </svg>
+          </button>
         </div>
       </div>
     </section>
