@@ -7,7 +7,7 @@ const Login = () => {
   const navigate = useNavigate(); // Inisialisasi useNavigate
 
   const togglePasswordVisibility = () => {
-    setPasswordVisible(!passwordVisible); // Toggle visibilitas password
+    setPasswordVisible((prev) => !prev); // Toggle visibilitas password
   };
 
   return (
@@ -60,6 +60,7 @@ const Login = () => {
                   type="button"
                   onClick={togglePasswordVisibility}
                   className="absolute inset-y-0 right-0 flex items-center pr-3 text-gray-500"
+                  aria-label="Toggle password visibility"
                 >
                   {passwordVisible ? (
                     <svg
