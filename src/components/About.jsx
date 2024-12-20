@@ -2,9 +2,9 @@ import { useState, useEffect } from "react";
 import { Helmet } from "react-helmet"; // Import Helmet untuk SEO
 
 const images = [
-  "/public/img/faizur-rehman-GZGWL8wFFuI-unsplash.jpg",
-  "/public/img/2.jpg",
-  "/public/img/3.jpg",
+  "/img/faizur-rehman-GZGWL8wFFuI-unsplash.jpg",
+  "/img/2.jpg",
+  "/img/3.jpg",
 ];
 
 const About = () => {
